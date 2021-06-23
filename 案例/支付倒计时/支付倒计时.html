@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+div{
+  width: 350px;
+  height: 350px;
+  background-color: aqua;
+  text-align: center;
+  /* position: fixed;
+  top:0;
+  left:50% */
+  margin: 0 auto;
+  padding: 20px;
+}
+button{
+  margin:20px  20px;
+}
+</style>
+<body>
+  <div >
+        <h3>商品：前端课程</h3>
+        <h3>原价：1980元</h3>
+        <h3>现价：1.98元</h3>
+        <h3>内容：HTML,CSS,JS</h3>
+        <h3>地址：门头沟大学</h3>
+        <button>取消</button>
+        <button>支付</button>
+  </div>
+  <script>
+    //逻辑：点击支付，出现确认框
+    document.getElementsByTagName('button')[1].onclick=function(){
+      let   res=   window.confirm('你确定要支付吗？')
+        if(res){
+          location.href='./success.html'
+        }
+    }
+  </script>
+</body>
+</html>

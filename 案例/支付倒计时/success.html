@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      width: 350px;
+      height: 350px;
+      margin: 0 auto;
+    }
+    button {
+      margin: 10px;
+      width: 100px;
+      height: 50px;
+      font-size: 20px;
+      background-color: red;
+    }
+    span {
+      color: red;
+      font-size: 32px;
+    }
+  </style>
+  <body>
+    <div>
+      <h1>恭喜您，支付成功</h1>
+      <span id="jumTo">10</span>秒后自动返回首页
+      <p><button>立即返回</button></p>
+    </div>
+  </body>
+  <script>
+    // 逻辑：加载页面时，应该触发定时器 10s
+    window.onload = function () {
+      let timer = 10;
+      setInterval(() => {
+        timer--;
+        document.getElementById("jumTo").innerText = timer;
+        if (timer == 0) {
+          location.href = "https://www.baidu.com";
+        }
+      }, 1000);
+    };
+    document.getElementsByTagName("button")[0].onclick= function () {
+      location.href = "https://www.baidu.com";
+    };
+  </script>
+</html>
